@@ -6,9 +6,8 @@ app.get('/', (request, response) => {
     response.send('Olá Codespaces');
 });
 
-
-app.get('/mensagem', (request, response) => {
-    response.send('Boa tarde');
+app.get('/mensagem/:nome', (request, response) => {
+    response.send('Boa tarde '+ request.params['nome']);
 });
 
 app.listen(port, () => {
